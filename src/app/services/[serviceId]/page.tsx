@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, {use} from 'react';
 import {motion} from 'framer-motion';
 import {notFound} from 'next/navigation';
 import {Building2, Code, HomeIcon, CheckCircle, ArrowRight} from 'lucide-react';
@@ -120,7 +120,7 @@ const serviceDetails = {
 };
 
 const ServiceDetailPage = ({params}: {params: {serviceId: string}}) => {
-  const {serviceId} = params;
+  const {serviceId} = use(params);
   const service = serviceDetails[serviceId as keyof typeof serviceDetails];
 
   if (!service) {
