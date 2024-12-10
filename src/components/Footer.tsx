@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import {Facebook, Twitter, Linkedin, Mail, MapPin, Phone} from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -23,9 +23,15 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li className="hover:text-blue-400 cursor-pointer">Building Automation</li>
-              <li className="hover:text-blue-400 cursor-pointer">Software Solutions</li>
-              <li className="hover:text-blue-400 cursor-pointer">Building Architecture</li>
+              <li className="hover:text-blue-400 cursor-pointer">
+                Building Automation
+              </li>
+              <li className="hover:text-blue-400 cursor-pointer">
+                Software Solutions
+              </li>
+              <li className="hover:text-blue-400 cursor-pointer">
+                Building Architecture
+              </li>
             </ul>
           </div>
 
@@ -61,7 +67,9 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p>&copy; {new Date().getFullYear()} MHB Pvt. Ltd. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} MHB Pvt. Ltd. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
