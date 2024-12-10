@@ -1,91 +1,58 @@
-'use client';
-
-import {useState} from 'react';
-import {motion} from 'framer-motion';
+import React from 'react';
+import {Menu, X} from 'lucide-react';
 import Link from 'next/link';
+import {usePathname} from 'next/navigation';
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+const Navbar = () => {
+  const navItems = [
+    {name: 'Home', path: '/'},
+    {name: 'About', path: '/about'},
+    {name: 'Services', path: '/services'},
+    {name: 'Contact', path: '/contact'},
+  ];
 
   return (
-    <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-sm">
-      <div className="container-padding">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="font-bold text-xl text-primary">
-            MHB Pvt. Ltd.
+    <nav className="bg-white shadow-md fixed w-full z-50">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center h-16">
+          <Link href="/" className="font-bold text-2xl text-blue-600">
+            MHB
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link
-              href="#services"
-              className="text-gray-600 hover:text-primary transition-colors">
-              Services
-            </Link>
-            <Link
-              href="#portfolio"
-              className="text-gray-600 hover:text-primary transition-colors">
-              Portfolio
-            </Link>
-            <Link
-              href="#contact"
-              className="text-gray-600 hover:text-primary transition-colors">
-              Contact
-            </Link>
-            <button className="button-primary">Get a Quote</button>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-8">
+            {navItems.map(item => (
+              <Link
+                key={item.name}
+                href={item.path}
+                className="text-gray-600 hover:text-blue-600 transition-colors">
+                {item.name}
+              </Link>
+            ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-            <span className="sr-only">Open menu</span>
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
-              />
-            </svg>
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isOpen && (
-          <motion.div
-            initial={{opacity: 0, y: -20}}
-            animate={{opacity: 1, y: 0}}
-            exit={{opacity: 0, y: -20}}
-            className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link
-                href="#services"
-                className="block px-3 py-2 text-gray-600 hover:text-primary transition-colors"
-                onClick={() => setIsOpen(false)}>
-                Services
-              </Link>
-              <Link
-                href="#portfolio"
-                className="block px-3 py-2 text-gray-600 hover:text-primary transition-colors"
-                onClick={() => setIsOpen(false)}>
-                Portfolio
-              </Link>
-              <Link
-                href="#contact"
-                className="block px-3 py-2 text-gray-600 hover:text-primary transition-colors"
-                onClick={() => setIsOpen(false)}>
-                Contact
-              </Link>
-              <button className="button-primary w-full mt-4">
-                Get a Quote
-              </button>
+          {/* Mobile Navigation using details/summary */}
+          <details className="md:hidden">
+            <summary className="list-none">
+              <Menu className="h-6 w-6" />
+            </summary>
+            <div className="absolute left-0 right-0 bg-white shadow-md">
+              <div className="px-2 pt-2 pb-3 space-y-1">
+                {navItems.map(item => (
+                  <Link
+                    key={item.name}
+                    href={item.path}
+                    className="block px-3 py-2 text-gray-600 hover:text-blue-600 transition-colors">
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
             </div>
-          </motion.div>
-        )}
+          </details>
+        </div>
       </div>
     </nav>
   );
-}
+};
+
+export default Navbar;
