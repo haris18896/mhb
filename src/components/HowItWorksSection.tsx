@@ -49,9 +49,8 @@ const HowItWorksSection = () => {
               key={step.title}
               initial={{opacity: 0, y: 20}}
               animate={{opacity: 1, y: 0}}
-              transition={{duration: 0.5, delay: index * 0.1}}
-              className="relative">
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              transition={{duration: 0.5, delay: index * 0.1}}>
+              <div className="relative bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
                 <step.icon className="w-12 h-12 text-blue-600 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
                 <p className="text-gray-600">{step.description}</p>

@@ -20,15 +20,16 @@ const AboutPage = () => {
           <motion.div
             initial={{opacity: 0, y: 20}}
             animate={{opacity: 1, y: 0}}
-            transition={{duration: 0.8}}
-            className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              About MHB Pvt. Ltd.
-            </h1>
-            <p className="text-xl text-gray-600">
-              Leading the way in building automation, software solutions, and
-              architectural innovation.
-            </p>
+            transition={{duration: 0.8}}>
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                About MHB Pvt. Ltd.
+              </h1>
+              <p className="text-xl text-gray-600">
+                Leading the way in building automation, software solutions, and
+                architectural innovation.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -40,31 +41,33 @@ const AboutPage = () => {
             <motion.div
               initial={{opacity: 0, x: -20}}
               animate={{opacity: 1, x: 0}}
-              transition={{duration: 0.8}}
-              className="bg-white p-8 rounded-xl shadow-lg">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Our Mission
-              </h2>
-              <p className="text-gray-600">
-                To deliver innovative and sustainable solutions that transform
-                spaces and enhance lives through cutting-edge technology and
-                exceptional design.
-              </p>
+              transition={{duration: 0.8}}>
+              <div className="bg-white p-8 rounded-xl shadow-lg">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  Our Mission
+                </h2>
+                <p className="text-gray-600">
+                  To deliver innovative and sustainable solutions that transform
+                  spaces and enhance lives through cutting-edge technology and
+                  exceptional design.
+                </p>
+              </div>
             </motion.div>
 
             <motion.div
               initial={{opacity: 0, x: 20}}
               animate={{opacity: 1, x: 0}}
-              transition={{duration: 0.8}}
-              className="bg-white p-8 rounded-xl shadow-lg">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Our Vision
-              </h2>
-              <p className="text-gray-600">
-                To be the global leader in integrated building solutions,
-                setting new standards in automation, software development, and
-                architectural excellence.
-              </p>
+              transition={{duration: 0.8}}>
+              <div className="bg-white p-8 rounded-xl shadow-lg">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  Our Vision
+                </h2>
+                <p className="text-gray-600">
+                  To be the global leader in integrated building solutions,
+                  setting new standards in automation, software development, and
+                  architectural excellence.
+                </p>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -79,11 +82,12 @@ const AboutPage = () => {
                 key={stat.label}
                 initial={{opacity: 0, y: 20}}
                 animate={{opacity: 1, y: 0}}
-                transition={{duration: 0.5, delay: index * 0.1}}
-                className="text-center text-white">
-                <stat.icon className="w-8 h-8 mx-auto mb-4" />
-                <div className="text-3xl font-bold mb-2">{stat.value}</div>
-                <div className="text-blue-100">{stat.label}</div>
+                transition={{duration: 0.5, delay: index * 0.1}}>
+                <div className="text-center text-white">
+                  <stat.icon className="w-8 h-8 mx-auto mb-4" />
+                  <div className="text-3xl font-bold mb-2">{stat.value}</div>
+                  <div className="text-blue-100">{stat.label}</div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -118,17 +122,18 @@ const AboutPage = () => {
                 key={member.name}
                 initial={{opacity: 0, y: 20}}
                 animate={{opacity: 1, y: 0}}
-                transition={{duration: 0.5, delay: index * 0.1}}
-                className="text-center">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  width={100}
-                  height={100}
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
-                />
-                <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                <p className="text-gray-600">{member.role}</p>
+                transition={{duration: 0.5, delay: index * 0.1}}>
+                <div className="text-center">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={100}
+                    height={100}
+                    className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                  />
+                  <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
+                  <p className="text-gray-600">{member.role}</p>
+                </div>
               </motion.div>
             ))}
           </div>

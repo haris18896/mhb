@@ -43,8 +43,8 @@ const ReviewsSection = () => {
             Client Reviews
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Don't just take our word for it - hear what our clients have to say
-            about working with MHB.
+            {`Don't just take our word for it - hear what our clients have to say
+            about working with MHB.`}
           </p>
         </div>
 
@@ -54,28 +54,29 @@ const ReviewsSection = () => {
               key={review.name}
               initial={{opacity: 0, y: 20}}
               animate={{opacity: 1, y: 0}}
-              transition={{duration: 0.5, delay: index * 0.1}}
-              className="bg-white p-6 rounded-xl shadow-lg">
-              <div className="flex items-center mb-4">
-                <img
-                  src={review.image}
-                  alt={review.name}
-                  className="w-12 h-12 rounded-full mr-4"
-                />
-                <div>
-                  <h3 className="font-semibold">{review.name}</h3>
-                  <p className="text-gray-600 text-sm">{review.role}</p>
-                </div>
-              </div>
-              <div className="flex mb-4">
-                {[...Array(review.rating)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-5 h-5 text-yellow-400 fill-current"
+              transition={{duration: 0.5, delay: index * 0.1}}>
+              <div className="bg-white p-6 rounded-xl shadow-lg">
+                <div className="flex items-center mb-4">
+                  <img
+                    src={review.image}
+                    alt={review.name}
+                    className="w-12 h-12 rounded-full mr-4"
                   />
-                ))}
+                  <div>
+                    <h3 className="font-semibold">{review.name}</h3>
+                    <p className="text-gray-600 text-sm">{review.role}</p>
+                  </div>
+                </div>
+                <div className="flex mb-4">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="w-5 h-5 text-yellow-400 fill-current"
+                    />
+                  ))}
+                </div>
+                <p className="text-gray-600">{review.content}</p>
               </div>
-              <p className="text-gray-600">{review.content}</p>
             </motion.div>
           ))}
         </div>

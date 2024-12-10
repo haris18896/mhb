@@ -1,5 +1,5 @@
 'use client';
-import React, {use} from 'react';
+import React from 'react';
 import {motion} from 'framer-motion';
 import {notFound} from 'next/navigation';
 import {Building2, Code, HomeIcon, CheckCircle, ArrowRight} from 'lucide-react';
@@ -119,9 +119,8 @@ const serviceDetails = {
   },
 };
 
-const ServiceDetailPage = ({params}: {params: {serviceId: string}}) => {
-  const {serviceId} = use(params);
-  const service = serviceDetails[serviceId as keyof typeof serviceDetails];
+function ServiceDetailPage({params}) {
+  const service = serviceDetails[params.serviceId];
 
   if (!service) {
     notFound();
@@ -221,6 +220,6 @@ const ServiceDetailPage = ({params}: {params: {serviceId: string}}) => {
       </section>
     </div>
   );
-};
+}
 
 export default ServiceDetailPage;
