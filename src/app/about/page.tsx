@@ -98,22 +98,19 @@ const AboutPage = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: 'David Chen',
-                role: 'CEO & Founder',
-                image:
-                  'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200',
+                name: 'Mehran Ahmad',
+                role: 'CEO & Co-Founder',
+                image: '/images/mehran_ahmad.jpg',
               },
               {
-                name: 'Sarah Williams',
-                role: 'Technical Director',
-                image:
-                  'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200',
+                name: 'Haris Ahmad',
+                role: 'Director & Head of Development',
+                image: '/images/haris_ahmad.jpg',
               },
               {
-                name: 'Mark Thompson',
+                name: 'Bilal Ahmad',
                 role: 'Head of Architecture',
-                image:
-                  'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200',
+                image: '/images/bilal_ahmad.jpg',
               },
             ].map((member, index) => (
               <motion.div
