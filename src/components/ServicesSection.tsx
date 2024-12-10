@@ -1,5 +1,6 @@
+'use client';
 import {motion} from 'framer-motion';
-import {useInView} from 'react-intersection-observer';
+// import {useInView} from 'react-intersection-observer';
 
 const services = [
   {
@@ -26,17 +27,18 @@ const services = [
 ];
 
 export default function ServicesSection() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  // const [ref, inView] = useInView({
+  //   triggerOnce: true,
+  //   threshold: 0.1,
+  // });
 
   return (
-    <section ref={ref} className="section-padding bg-gray-50">
+    <section className="section-padding bg-gray-50">
       <div className="container-padding">
         <motion.div
           initial={{opacity: 0, y: 20}}
-          animate={inView ? {opacity: 1, y: 0} : {}}
+          // animate={inView ? {opacity: 1, y: 0} : {}}
+          animate={{}}
           transition={{duration: 0.6}}
           className="text-center mb-16">
           <h2 className="heading-2 mb-4">Our Services</h2>
@@ -51,7 +53,8 @@ export default function ServicesSection() {
             <motion.div
               key={service.title}
               initial={{opacity: 0, y: 20}}
-              animate={inView ? {opacity: 1, y: 0} : {}}
+              // animate={inView ? {opacity: 1, y: 0} : {}}
+              animate={{}}
               transition={{duration: 0.6, delay: index * 0.2}}
               className="bg-white p-6 rounded-xl shadow-lg">
               <div className="text-4xl mb-4">{service.icon}</div>

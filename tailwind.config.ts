@@ -1,6 +1,5 @@
-import type {Config} from 'tailwindcss';
-
-export default {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,10 +8,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
+        primary: {
+          DEFAULT: 'red', // Replace with your color
+          90: 'rgba(blue, 0.9)', // Adjust opacity
+        },
       },
     },
   },
   plugins: [],
-} satisfies Config;
+};

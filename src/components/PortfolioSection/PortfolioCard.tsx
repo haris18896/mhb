@@ -1,3 +1,4 @@
+'use client';
 import {motion} from 'framer-motion';
 import Image from 'next/image';
 
@@ -23,7 +24,7 @@ export default function PortfolioCard({
       transition={{duration: 0.6, delay: index * 0.2}}
       className="group relative overflow-hidden rounded-xl bg-white shadow-lg">
       <div className="relative h-64 w-full">
-        <Image
+        <img
           src={imageUrl}
           alt={title}
           fill

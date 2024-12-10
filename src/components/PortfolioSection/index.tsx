@@ -1,4 +1,5 @@
-import {useInView} from 'react-intersection-observer';
+'use client';
+// import {useInView} from 'react-intersection-observer';
 import PortfolioCard from './PortfolioCard';
 import {motion} from 'framer-motion';
 
@@ -27,17 +28,18 @@ const portfolioItems = [
 ];
 
 export default function PortfolioSection() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  // const [ref, inView] = useInView({
+  //   triggerOnce: true,
+  //   threshold: 0.1,
+  // });
 
   return (
-    <section id="portfolio" ref={ref} className="section-padding bg-gray-50">
+    <section id="portfolio" className="section-padding bg-gray-50">
       <div className="container-padding">
         <motion.div
           initial={{opacity: 0, y: 20}}
-          animate={inView ? {opacity: 1, y: 0} : {}}
+          // animate={inView ? {opacity: 1, y: 0} : {}}
+          animate={{}}
           transition={{duration: 0.6}}
           className="text-center mb-16">
           <h2 className="heading-2 mb-4">Our Portfolio</h2>

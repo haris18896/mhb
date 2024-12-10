@@ -1,19 +1,24 @@
-import {useInView} from 'react-intersection-observer';
+'use client';
+// import {useInView} from 'react-intersection-observer';
 import {motion} from 'framer-motion';
 import ContactForm from './ContactForm';
 
 export default function ContactSection() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  // const [ref, inView] = useInView({
+  //   triggerOnce: true,
+  //   threshold: 0.1,
+  // });
 
   return (
-    <section id="contact" ref={ref} className="section-padding">
+    <section
+      // ref={ref}
+      id="contact"
+      className="section-padding">
       <div className="container-padding">
         <motion.div
           initial={{opacity: 0, y: 20}}
-          animate={inView ? {opacity: 1, y: 0} : {}}
+          // animate={inView ? {opacity: 1, y: 0} : {}}
+          animate={{}}
           transition={{duration: 0.6}}
           className="text-center mb-16">
           <h2 className="heading-2 mb-4">Get in Touch</h2>
@@ -26,7 +31,8 @@ export default function ContactSection() {
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <motion.div
             initial={{opacity: 0, x: -20}}
-            animate={inView ? {opacity: 1, x: 0} : {}}
+            // animate={inView ? {opacity: 1, x: 0} : {}}
+            animate={{}}
             transition={{duration: 0.6, delay: 0.2}}>
             <h3 className="text-xl font-bold mb-4">Contact Information</h3>
             <div className="space-y-4 text-gray-600">
@@ -55,7 +61,8 @@ export default function ContactSection() {
 
           <motion.div
             initial={{opacity: 0, x: 20}}
-            animate={inView ? {opacity: 1, x: 0} : {}}
+            // animate={inView ? {opacity: 1, x: 0} : {}}
+            animate={{}}
             transition={{duration: 0.6, delay: 0.4}}
             className="bg-white p-6 rounded-lg shadow-lg">
             <ContactForm />
