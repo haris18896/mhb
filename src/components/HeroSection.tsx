@@ -15,7 +15,7 @@ const HeroSection = () => {
             animate={{opacity: 1, y: 0}}
             transition={{duration: 0.8}}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Building Tomorrow's
+              {`Building Tomorrow's`}
               <span className="text-blue-600 block">Innovations Today</span>
             </h1>
             <p className="mt-6 text-lg text-gray-600 leading-relaxed">

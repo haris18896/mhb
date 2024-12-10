@@ -1,7 +1,6 @@
 import React from 'react';
-import {Menu, X} from 'lucide-react';
+import {Menu} from 'lucide-react';
 import Link from 'next/link';
-import {usePathname} from 'next/navigation';
 
 const Navbar = () => {
   const navItems = [

@@ -2,6 +2,7 @@
 import React from 'react';
 import {motion} from 'framer-motion';
 import {Award, Users, Target, Clock} from 'lucide-react';
+import Image from 'next/image';
 
 const AboutPage = () => {
   const stats = [
@@ -119,9 +120,11 @@ const AboutPage = () => {
                 animate={{opacity: 1, y: 0}}
                 transition={{duration: 0.5, delay: index * 0.1}}
                 className="text-center">
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
+                  width={100}
+                  height={100}
                   className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
                 />
                 <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
